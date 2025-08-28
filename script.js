@@ -10,64 +10,64 @@ window.onscroll = () => {
   };
 
   // In-memory storage for comments, using post IDs as keys
-// const commentsData = {
-//     1: [], // Comments for post 1
-//     2: [], // Comments for post 2
-//     // Add more posts as needed
-// };
+const commentsData = {
+    1: [], // Comments for post 1
+    2: [], // Comments for post 2
+    // Add more posts as needed
+};
 
 // // Function to post a comment for a specific post
-// function postComment(inputId, listId, postId) {
-//     const commentInput = document.getElementById(inputId);
-//     const commentText = commentInput.value.trim();
+function postComment(inputId, listId, postId) {
+    const commentInput = document.getElementById(inputId);
+    const commentText = commentInput.value.trim();
 
-//     if (commentText) {
-//         // Add comment to the appropriate post's comments array
-//         commentsData[postId].push(commentText);
+    if (commentText) {
+        // Add comment to the appropriate post's comments array
+        commentsData[postId].push(commentText);
         
-//         // Clear the input field
-//         commentInput.value = "";
+        // Clear the input field
+        commentInput.value = "";
         
-//         // Render comments below the post
-//         renderComments(listId, commentsData[postId]);
-//     }
-// }
+        // Render comments below the post
+        renderComments(listId, commentsData[postId]);
+    }
+}
 
 // // Function to render comments for a specific post
-// function renderComments(listId, comments) {
-//     const commentsList = document.getElementById(listId);
+function renderComments(listId, comments) {
+    const commentsList = document.getElementById(listId);
     
-//     // Clear existing comments
-//     commentsList.innerHTML = "";
+    // Clear existing comments
+    commentsList.innerHTML = "";
 
-//     // Render each comment
-//     comments.forEach(comment => {
-//         const commentElement = document.createElement("div");
-//         commentElement.classList.add("comment");
-//         commentElement.textContent = comment;
-//         commentsList.appendChild(commentElement);
-//     });
-// }
+    // Render each comment
+    comments.forEach(comment => {
+        const commentElement = document.createElement("div");
+        commentElement.classList.add("comment");
+        commentElement.textContent = comment;
+        commentsList.appendChild(commentElement);
+    });
+}
 
-// // Function to handle posting comments for individual posts
-// function postComment(inputId, listId) {
-//     const commentInput = document.getElementById(inputId);
-//     const commentsList = document.getElementById(listId);
-//     const commentText = commentInput.value.trim();
+// Function to handle posting comments for individual posts
+function postComment(inputId, listId) {
+    const commentInput = document.getElementById(inputId);
+    const commentsList = document.getElementById(listId);
+    const commentText = commentInput.value.trim();
 
-//     if (commentText) {
-//         // Create a new comment element
-//         const commentElement = document.createElement("div");
-//         commentElement.classList.add("comment");
-//         commentElement.textContent = commentText;
+    if (commentText) {
+        // Create a new comment element
+        const commentElement = document.createElement("div");
+        commentElement.classList.add("comment");
+        commentElement.textContent = commentText;
         
-//         // Append the comment to the specific comments list
-//         commentsList.appendChild(commentElement);
+        // Append the comment to the specific comments list
+        commentsList.appendChild(commentElement);
         
-//         // Clear the input field
-//         commentInput.value = "";
-//     }
-// }
+        // Clear the input field
+        commentInput.value = "";
+    }
+}
 
 // In-memory storage for comments, using post IDs as keys
 const commentsData = {};
@@ -149,4 +149,5 @@ document.querySelectorAll('.comment-input').forEach(input => {
         }
       }
     });
+
   });
